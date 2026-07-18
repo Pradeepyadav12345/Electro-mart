@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - ElectroMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ElectroMart</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button>🔍</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html" class="active">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <h2>Your Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+                <a href="payment.html" class="btn">Proceed to Payment</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 ElectroMart. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

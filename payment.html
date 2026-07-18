@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - ElectroMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ElectroMart</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button>🔍</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="main-content">
+            <h2>Payment</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+                    <span class="error">Please enter a valid card number</span>
+                </div>
+                <div class="form-group">
+                    <label for="expiry">Expiry Date:</label>
+                    <input type="text" id="expiry" placeholder="MM/YY" required>
+                    <span class="error">Please enter a valid expiry date</span>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" placeholder="123" required>
+                    <span class="error">Please enter a valid CVV</span>
+                </div>
+                <button type="submit" class="btn">Confirm Payment</button>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 ElectroMart. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

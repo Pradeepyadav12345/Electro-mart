@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ElectroMart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">ElectroMart</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search products...">
+            <button>🔍</button>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><button class="theme-toggle" onclick="toggleTheme()">🌙</button></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Filters</h3>
+            <div class="filter-group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option>All</option>
+                    <option>Smartphones</option>
+                    <option>Laptops</option>
+                    <option>Accessories</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="price">Price Range</label>
+                <input type="range" id="price" min="0" max="1000" value="500">
+            </div>
+        </aside>
+        <div class="main-content">
+            <h2>Our Products</h2>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2025 ElectroMart. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
